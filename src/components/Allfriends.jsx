@@ -74,7 +74,7 @@ const Allfriends = async () => {
                 {friend.address.zipcode}
               </p>
               <Link href={`/friends/${friend.id}`}>
-              <button className="bg-green-300 py-2 px-4 rounded">View Details</button>
+              <button className="bg-green-300 py-2 px-4 rounded cursor-pointer hover:bg-green-800">View Details</button>
               </Link>
             </div>
           </div>
