@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const getFriends = async () => {
   try {
@@ -30,6 +31,7 @@ const Allfriends = async () => {
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {friends.map((friend) => (
+            <Link key={friend.id} href={`/friends/${friend.id}`}>
           <div
             key={friend.id}
             className="rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
@@ -71,9 +73,14 @@ const Allfriends = async () => {
                 <span className="font-semibold">Zipcode:</span>{" "}
                 {friend.address.zipcode}
               </p>
+              <Link href={`/friends/${friend.id}`}>
+              <button className="bg-green-300 py-2 px-4 rounded">View Details</button>
+              </Link>
             </div>
           </div>
-        ))}
+          </Link>
+          
+        ))} 
       </div>
     </section>
   );
