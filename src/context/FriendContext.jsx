@@ -16,10 +16,11 @@ const FriendProvider = ({children}) => {
 const addFriend = (friend) => {
     const alreadyExists = friends.some((item) => item.id === friend.id);
     if(alreadyExists) {
-        toast.warn('Friend already added');
+        toast.info('Friend already added');
         return
     }
     setFriends((prevFriends) => [...prevFriends, friend]);
+    toast.success('Friend added')
 }
 
     return (<FriendContext.Provider value={{friends, addFriend}}>{children}</FriendContext.Provider>
