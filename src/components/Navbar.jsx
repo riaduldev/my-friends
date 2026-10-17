@@ -2,17 +2,20 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Menu, X, Users } from "lucide-react";
+import { FriendContext } from "@/context/FriendContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const {friends} = useContext(FriendContext);
 
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Friends", href: "/friends" },
     { name: "About", href: "/about" },
   ];
+  console.log(friends);
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
@@ -38,7 +41,8 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-
+       <Link href={'/friends'}>
+       <p>Added Item: {friends.length}</p></Link>
         {/* Mobile Menu Button */}
         <button
           type="button"

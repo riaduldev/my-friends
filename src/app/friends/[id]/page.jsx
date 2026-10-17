@@ -1,4 +1,5 @@
 
+import AddFriendBtn from "@/components/AddFriendBtn";
 import Link from "next/link";
 
 const FriendDetails = async ({ params }) => {
@@ -55,13 +56,7 @@ const FriendDetails = async ({ params }) => {
               </div>
 
               {/* UI Only Button */}
-              <button
-                type="button"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 sm:w-auto"
-              >
-                <span className="text-lg">+</span>
-                Add Friend
-              </button>
+              <AddFriendBtn friend={data}></AddFriendBtn>
             </div>
 
             <div className="mt-7 flex flex-wrap gap-3">
