@@ -14,6 +14,7 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Friends", href: "/friends" },
     { name: "About", href: "/about" },
+    { name: "Added-Friends", href: "/added-friends" },
   ];
   console.log(friends);
 
